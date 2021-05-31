@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
 import { useHistory } from 'react-router-dom'
 import { routes } from 'routes'
+
+import FormInput from 'components/form-input/form-input.component'
+import Button from 'components/button/button.component'
+
 import './login-panel.styles.scss'
 
 const LoginPanel = ({ resetUser, getUser, user }) => {
@@ -21,66 +23,71 @@ const LoginPanel = ({ resetUser, getUser, user }) => {
 		resetUser()
 	}
 
-	if (fetched) {
-		if (users.length > 0 && users[0].password === password) {
-			console.log('oldu')
-			history.push(routes.admin.path)
-			return <div>Login Başarılı</div>
-		} else {
-			return (
-				<div>
-					Login Başarısız
-					<button onClick={handleReset}>Return Login</button>
-				</div>
-			)
-		}
-	} else if (fetching) {
-		return (
-			<div>
-				Sunucuya Erişim Sağlanıyor ....
-				<button onClick={handleReset}>Return Login</button>
-			</div>
-		)
-	} else if (error) {
-		return (
-			<div>
-				Sunucuya Erişimda Hata oluştu
-				<button onClick={handleReset}>Return Login</button>
-			</div>
-		)
-	} else {
-		return (
-			<div className="login-panel-container">
-				<form
-					className="login-form"
-					onSubmit={handleSubmit}
-					noValidate
-					autoComplete="on">
-					<TextField
-						fullWidth
-						required
-						label="Username"
-						onChange={(e) => {
-							setUseraname(e.target.value)
-						}}
-					/>
-					<TextField
-						fullWidth
-						required
-						label="Password"
-						type="password"
-						autoComplete="current-password"
-						onChange={(e) => {
-							setPassword(e.target.value)
-						}}
-					/>
-					<Button type="submit" color="primary">
-						Primary
-					</Button>
-				</form>
-			</div>
-		)
-	}
+	return (
+		<div className="login-panel-container">
+			<h2>Sign In</h2>
+			{(() => {
+				if (fetched) {
+					if (users.length > 0 && users[0].password === password) {
+						history.push(routes.admin.path)
+						return <>Login Başarılı</>
+					} else {
+						return (
+							<>
+								Login Başarısız
+								<Button btnType="primary" onClick={handleReset}>
+									Return Login
+								</Button>
+							</>
+						)
+					}
+				} else if (fetching) {
+					return <>Sunucuya Erişim Sağlanıyor ....</>
+				} else if (error) {
+					return (
+						<>
+							Sunucuya Erişimda Hata oluştu
+							<Button btnType="primary" onClick={handleReset}>
+								Return Login
+							</Button>
+						</>
+					)
+				} else {
+					return (
+						<form
+							className="login-form"
+							onSubmit={handleSubmit}
+							noValidate
+							autoComplete="on">
+							<FormInput
+								label="Username"
+								placeholder="Enter Username"
+								type="text"
+								name="username"
+								value={username}
+								handleChange={(e) => setUseraname(e.target.value)}
+								required
+							/>
+							<FormInput
+								label="Password"
+								placeholder="Enter Password"
+								type="password"
+								name="password"
+								value={password}
+								handleChange={(e) => {
+									setPassword(e.target.value)
+								}}
+								required
+							/>
+							<Button type="submit" btnType="primary">
+								Sign In
+							</Button>
+						</form>
+					)
+				}
+			})()}
+		</div>
+	)
 }
 
 export default LoginPanel

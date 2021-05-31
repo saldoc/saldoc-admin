@@ -1,17 +1,27 @@
+@import 'assets/styles/_variables.scss';
+
 .login-panel-container {
-	width: 320px;
-	padding: 30px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: #fafafb;
-	box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
-	border-radius: 20px;
+	position: relative;
+	width: 520px;
+	border-radius: 2rem;
+	z-index: 5;
+	background: $background-color--light;
+	box-shadow: $box-shadow--main;
+	padding: 60px;
+
+	h2 {
+		margin-bottom: 36px;
+	}
 
 	.login-form {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+	}
+
+	button {
+		margin-top: 24px;
+		width: 100%;
 	}
 }
