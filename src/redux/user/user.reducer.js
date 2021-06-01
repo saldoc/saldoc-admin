@@ -7,7 +7,7 @@ const initialState = {
   error: null,
 };
 
-export default function user(state = initialState, action) {
+export default function UserReducer(state = initialState, action) {
   switch (action.type) {
     case UserTypes.GET_USER_PENDING:
       return { ...state, fetching: true, fetched: false, error: null };

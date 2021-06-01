@@ -19,7 +19,7 @@ const LoginPanel = ({ resetUser, getUser, user }) => {
 		getUser(username)
 	}
 
-	const handleReset = (e) => {
+	const handleReset = () => {
 		resetUser()
 	}
 

@@ -1,0 +1,67 @@
+@import 'assets/styles/_variables.scss';
+
+table {
+	border-spacing: 0;
+	border: 1px solid $border-color--main;
+	background-color: $background-color--light;
+	border-radius: 16px;
+	width: 100%;
+
+	thead {
+		tr {
+			&:first-of-type {
+				th {
+					&:hover {
+						background-color: $border-color--light;
+					}
+					&:last-of-type {
+						border-top-right-radius: 16px;
+					}
+					&:first-of-type {
+						border-top-left-radius: 16px;
+					}
+				}
+				&:hover {
+					background-color: unset;
+				}
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			&:last-of-type {
+				td {
+					border-bottom: none;
+					&:last-of-type {
+						border-bottom-right-radius: 16px;
+					}
+					&:first-of-type {
+						border-bottom-left-radius: 16px;
+					}
+				}
+			}
+			&:hover {
+				background-color: $border-color--light;
+			}
+		}
+	}
+
+	th {
+		text-align: left;
+		font-size: 0.875rem;
+		font-weight: bold;
+		color: $text-color--light;
+	}
+
+	td {
+		font-size: 1rem;
+	}
+
+	th,
+	td {
+		margin: 0;
+		padding: 20px 12px;
+		border-bottom: 1px solid $border-color--main;
+	}
+}

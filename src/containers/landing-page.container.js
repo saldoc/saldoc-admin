@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { LandingPage } from 'components/landing-page/landing-page.component'
+import LandingPage from 'components/landing-page/landing-page.component'
 import { withRouter } from "react-router";
 
 

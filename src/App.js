@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import AdminPage from 'components/admin-page/admin-page.component'
-import LandingPage from 'components/landing-page/landing-page.component'
+import { AdminPageContainer } from 'containers/admin-page.container'
+import { LandingPageContainer } from 'containers/landing-page.container'
+
 import { routes } from 'routes';
 
 import './App.css';
@@ -16,10 +17,10 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path={landing.path}>
-            <LandingPage />
+            <LandingPageContainer />
           </Route>
           <Route exact path={admin.path}>
-            <AdminPage />
+            <AdminPageContainer />
           </Route>
         </Switch>
       </Router>

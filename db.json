@@ -5,5 +5,67 @@
       "username": "saldoc",
       "password": "deneme123"
     }
+  ],
+  "products": [
+    {
+      "ID": 1,
+      "Name": "Cheese",
+      "Price": 99,
+      "PriceSale": 79,
+      "Location": "Refrigerated foods",
+      "IsNew": true,
+      "CreationDate": 1618815892370,
+      "UpdatedDate": 1618903528913
+    },
+    {
+      "ID": 2,
+      "Name": "Crisps",
+      "Price": 25,
+      "PriceSale": 23,
+      "Location": "the Snack isle",
+      "IsNew": false,
+      "CreationDate": 1618815892370,
+      "UpdatedDate": 1618903528913
+    },
+    {
+      "ID": 3,
+      "Name": "Pizza",
+      "Price": 199,
+      "PriceSale": 179,
+      "Location": "Refrigerated foods",
+      "IsNew": true,
+      "CreationDate": 1618815892370,
+      "UpdatedDate": 1618903541879
+    },
+    {
+      "ID": 4,
+      "Name": "Chocolate",
+      "Price": 9,
+      "PriceSale": 7,
+      "Location": "the Snack isle",
+      "IsNew": false,
+      "CreationDate": 1618815892370,
+      "UpdatedDate": 1619705590155
+    },
+    {
+      "ID": 5,
+      "Name": "Self-raising flour",
+      "Price": 199,
+      "PriceSale": 179,
+      "Location": "Refrigerated foods",
+      "IsNew": true,
+      "CreationDate": 1618815892370,
+      "UpdatedDate": 1619705590155
+    },
+    {
+      "ID": 6,
+      "Name": "Ground almonds",
+      "Price": 259,
+      "PriceSale": 199,
+      "Location": "Refrigerated foods",
+      "IsNew": true,
+      "CreationDate": 1618903730671,
+      "UpdatedDate": 1618903730671
+    }
   ]
 }

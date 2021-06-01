@@ -4,7 +4,7 @@ import { getUser, resetUser } from 'redux/user/user.actions'
 import { withRouter } from "react-router";
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.UserReducer
 })
 
 const mapDispatchToProps = dispatch => (
