@@ -7,6 +7,7 @@ import { LandingPageContainer } from 'containers/landing-page.container'
 import { routes } from 'routes';
 
 import './App.css';
+import 'assets/styles/global.scss'
 
 const App = () => {
 

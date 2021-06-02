@@ -8,7 +8,7 @@
   ],
   "products": [
     {
-      "ID": 1,
+      "id": 1,
       "Name": "Cheese",
       "Price": 99,
       "PriceSale": 79,
@@ -18,7 +18,7 @@
       "UpdatedDate": 1618903528913
     },
     {
-      "ID": 2,
+      "id": 2,
       "Name": "Crisps",
       "Price": 25,
       "PriceSale": 23,
@@ -28,7 +28,7 @@
       "UpdatedDate": 1618903528913
     },
     {
-      "ID": 3,
+      "id": 3,
       "Name": "Pizza",
       "Price": 199,
       "PriceSale": 179,
@@ -38,7 +38,7 @@
       "UpdatedDate": 1618903541879
     },
     {
-      "ID": 4,
+      "id": 4,
       "Name": "Chocolate",
       "Price": 9,
       "PriceSale": 7,
@@ -48,7 +48,7 @@
       "UpdatedDate": 1619705590155
     },
     {
-      "ID": 5,
+      "id": 5,
       "Name": "Self-raising flour",
       "Price": 199,
       "PriceSale": 179,
@@ -58,7 +58,7 @@
       "UpdatedDate": 1619705590155
     },
     {
-      "ID": 6,
+      "id": 6,
       "Name": "Ground almonds",
       "Price": 259,
       "PriceSale": 199,

@@ -2,9 +2,14 @@ import React from 'react'
 
 import './button.styles.scss'
 
-const Button = ({ children, btnType, ...otherProps }) => {
+const Button = ({ children, btnType, extraClassName, ...otherProps }) => {
+	let classNamesOfButton = `${btnType ? btnType : ''} 
+	${extraClassName ? extraClassName : ''} btn`
+		.replace(/\s+/g, ' ')
+		.trim()
+
 	return (
-		<button className={`${btnType ? btnType : ''} custom-btn`} {...otherProps}>
+		<button className={classNamesOfButton} {...otherProps}>
 			{children}
 		</button>
 	)

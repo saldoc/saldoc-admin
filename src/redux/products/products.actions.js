@@ -22,7 +22,7 @@ export function updateProduct(product) {
   }
 }
 
-export function deleteProduct(dispatch, id) {
+export function dispatchDeleteProduct(dispatch, id) {
   dispatch({ type: ProductsTypes.DELETE_PRODUCT_PENDING, payload: { data: { id: id } } })
   dispatch({ type: 'TEMP', payload: axios.delete(`http://localhost:3004/products/${id}`) })
     .then(response => {

@@ -17,13 +17,14 @@ const ProductTable = ({ product, getProducts, deleteProduct }) => {
 
 	const handleDelete = (id) => {
 		deleteProduct(id)
+		getProducts()
 	}
 
 	const columns = React.useMemo(
 		() => [
 			{
 				Header: 'ID',
-				accessor: 'ID',
+				accessor: 'id',
 			},
 			{
 				Header: 'Product Name',
@@ -58,10 +59,10 @@ const ProductTable = ({ product, getProducts, deleteProduct }) => {
 			},
 			{
 				Header: 'Actions',
-				accessor: ' ',
+				accessor: '',
 				Cell: (props) => {
 					return (
-						<Button onClick={() => handleDelete(props.row.values.ID)}>
+						<Button onClick={() => handleDelete(props.row.values.id)}>
 							Delete
 						</Button>
 					)

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { routes } from 'routes'
 
-import FormInput from 'components/form-input/form-input.component'
+import LoginFormInput from 'components/login-form-input/login-form-input.component'
 import Button from 'components/button/button.component'
 
 import './login-panel.styles.scss'
@@ -59,7 +59,7 @@ const LoginPanel = ({ resetUser, getUser, user }) => {
 							onSubmit={handleSubmit}
 							noValidate
 							autoComplete="on">
-							<FormInput
+							<LoginFormInput
 								label="Username"
 								placeholder="Enter Username"
 								type="text"
@@ -68,7 +68,7 @@ const LoginPanel = ({ resetUser, getUser, user }) => {
 								handleChange={(e) => setUseraname(e.target.value)}
 								required
 							/>
-							<FormInput
+							<LoginFormInput
 								label="Password"
 								placeholder="Enter Password"
 								type="password"

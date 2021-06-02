@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux'
 import ProductTable from 'components/product-table/product-table.component'
-import { getProducts, deleteProduct } from 'redux/products/products.actions'
+import { getProducts, dispatchDeleteProduct } from 'redux/products/products.actions'
 import { withRouter } from "react-router";
 
 
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => (
   {
     getProducts: () => dispatch(getProducts()),
-    deleteProduct: (id) => deleteProduct(dispatch, id),
+    deleteProduct: (id) => dispatchDeleteProduct(dispatch, id),
   }
 )
 
