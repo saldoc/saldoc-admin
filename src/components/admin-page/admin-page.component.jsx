@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { ProductTableContainer } from 'containers/product-table.container'
 import Modal from 'components/modal/modal.components'
 import Button from 'components/button/button.component'
+import FormInput from 'components/form-input/form-input.component'
 
 import './admin-page.styles.scss'
 
@@ -13,17 +14,53 @@ const AdminPage = () => {
 			<Button btnType="btn-outline" onClick={() => toggleModal(!isModalOpen)}>
 				Toggle Modal
 			</Button>
-			<Modal title={'Title'} isOpen={isModalOpen} toggle={toggleModal}>
+			<Modal title={'Create Product'} isOpen={isModalOpen} toggle={toggleModal}>
 				<Modal.Body>
-					This is a wider card with supporting text below as a natural lead-in
-					to additional content. This card has even longer content than the
-					first to show that equal height action. Lorem ipsum dolor sit, amet
-					consectetur adipisicing elit. Nostrum ab ducimus doloremque amet
-					molestias iusto qui perferendis nesciunt laborum obcaecati, ex
-					laboriosam illo ipsam ullam rem tenetur quam excepturi vitae.
+					{/* Name, Price, PriceSale (price sale in price dan küçük olmasına dikkat edeceğiz ), Location */}
+
+					<div className="row">
+						<div className="col-12">
+							<FormInput
+								label="Product Name"
+								placeholder="Enter Product Name"
+								type="text"
+								value=""
+								onChange={() => console.log('Product Name')}
+							/>
+						</div>
+						<div className="col-6">
+							<FormInput
+								label="Product Price"
+								placeholder="Enter Product Price"
+								type="text"
+								value=""
+								onChange={() => console.log('Product Price')}
+							/>
+						</div>
+						<div className="col-6">
+							<FormInput
+								label="Product Sale Price"
+								placeholder="Enter Sale Price"
+								type="text"
+								value=""
+								onChange={() => console.log('Product Sale Price')}
+							/>
+						</div>
+						<div className="col-12">
+							<FormInput
+								label="Product Location"
+								placeholder="Enter Product Location"
+								type="text"
+								value=""
+								onChange={() => console.log('Product Location')}
+							/>
+						</div>
+					</div>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button btnType="btn-text danger" onClick={() => toggleModal(false)}>
+					<Button
+						btnType="btn-outline cancel"
+						onClick={() => toggleModal(false)}>
 						Cancel
 					</Button>
 					<Button onClick={() => toggleModal(false)}>Create</Button>
