@@ -8,16 +8,6 @@
   ],
   "products": [
     {
-      "id": 1,
-      "Name": "Cheese",
-      "Price": 99,
-      "PriceSale": 79,
-      "Location": "Refrigerated foods",
-      "IsNew": true,
-      "CreationDate": 1618815892370,
-      "UpdatedDate": 1618903528913
-    },
-    {
       "id": 2,
       "Name": "Crisps",
       "Price": 25,

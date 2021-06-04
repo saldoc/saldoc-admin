@@ -1,7 +1,7 @@
 @import 'assets/styles/_variables.scss';
 
 //primary, success, danger, cancel
-//default, outline, text
+//default, outline, text, icon
 
 .btn {
 	position: relative;
@@ -272,5 +272,71 @@
 		border-color: $primary-color--light;
 		box-shadow: $box-shadow--main;
 		transition: none;
+	}
+}
+
+.btn-icon {
+	color: $primary-color--main;
+	background-color: transparent !important;
+	border-color: transparent !important;
+	box-shadow: none !important;
+	padding: 5px !important;
+	min-width: unset;
+
+	i {
+		margin-left: 0 !important;
+	}
+
+	&.success {
+		color: $success-color--main;
+
+		&:hover {
+			color: $success-color--dark;
+		}
+
+		&:active,
+		&.selected,
+		&[aria-selected='true'] {
+			color: $success-color--dark;
+		}
+	}
+
+	&.danger {
+		color: $danger-color--main;
+		&:hover {
+			color: $danger-color--dark;
+		}
+
+		&:active,
+		&.selected,
+		&[aria-selected='true'] {
+			color: $danger-color--dark;
+		}
+	}
+
+	&.cancel {
+		color: $cancel-color--main;
+
+		&:hover {
+			color: $cancel-color--dark;
+		}
+
+		&:active,
+		&.selected,
+		&[aria-selected='true'] {
+			color: $cancel-color--dark;
+		}
+	}
+
+	&:hover {
+		color: $primary-color--light;
+		transition-duration: 0.1s;
+		text-shadow: $box-shadow--main;
+	}
+
+	&:active,
+	&.selected,
+	&[aria-selected='true'] {
+		color: $primary-color--light;
 	}
 }

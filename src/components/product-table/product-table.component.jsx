@@ -1,9 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTable } from 'react-table'
 import Button from 'components/button/button.component'
+import ProductForm from 'components/product-form/product-form.component'
 import './product-table.styles.scss'
 
-const ProductTable = ({ product, getProducts, deleteProduct }) => {
+const ProductTable = ({
+	product,
+	getProducts,
+	deleteProduct,
+	updateProduct,
+}) => {
+	const [isModalOpen, toggleModal] = useState(false)
+	const [selectProduct, setSelectProduct] = useState(null)
+
 	useEffect(() => {
 		getProducts()
 	}, [])
@@ -18,6 +27,22 @@ const ProductTable = ({ product, getProducts, deleteProduct }) => {
 	const handleDelete = (id) => {
 		deleteProduct(id)
 		getProducts()
+	}
+
+	const handleModalApply = (product) => {
+		console.log(product)
+		// // product.updatedDate = new Date().getTime()
+		// toggleModal(false)
+		// setSelectProduct(null)
+		// //updateProduct(product)
+	}
+
+	const handleEdit = (id) => {
+		const selectedProduct = products.find((el) => el.id === id)
+		if (selectedProduct) {
+			toggleModal(true)
+			setSelectProduct(selectedProduct)
+		}
 	}
 
 	const columns = React.useMemo(
@@ -62,9 +87,18 @@ const ProductTable = ({ product, getProducts, deleteProduct }) => {
 				accessor: '',
 				Cell: (props) => {
 					return (
-						<Button onClick={() => handleDelete(props.row.values.id)}>
-							Delete
-						</Button>
+						<div className="table-action-row">
+							<Button
+								btnType="btn-icon"
+								onClick={() => handleEdit(props.row.values.id)}>
+								<i className="icon-edit" />
+							</Button>
+							<Button
+								btnType="btn-icon"
+								onClick={() => handleDelete(props.row.values.id)}>
+								<i className="icon-delete" />
+							</Button>
+						</div>
 					)
 				},
 			},
@@ -104,6 +138,14 @@ const ProductTable = ({ product, getProducts, deleteProduct }) => {
 					})}
 				</tbody>
 			</table>
+			<ProductForm
+				isModalOpen={isModalOpen}
+				selectedProduct={selectProduct}
+				handleModalApply={handleModalApply}
+				handleModalClose={toggleModal}
+				title="Edit Product"
+				applyTitle="Update"
+			/>
 		</div>
 	)
 }

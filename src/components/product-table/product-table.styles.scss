@@ -64,4 +64,8 @@ table {
 		padding: 20px 12px;
 		border-bottom: 1px solid $border-color--main;
 	}
+
+	.table-action-row {
+		display: flex;
+	}
 }
